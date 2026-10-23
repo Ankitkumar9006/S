@@ -1,0 +1,298 @@
+git -v
+git config --global user.name "ankit"
+git config --global user.email "ankit@gmail.com"
+
+
+
+ls -l 
+
+nano f1.txt 
+
+
+git init -> local repositry create
+
+. => e.g .git means hiddend folder 
+
+
+ls -al  or ls -a =>for showing hiddien file 
+
+
+=> git ko kisi file ko track karne ke liye explictly kahana padge
+
+=> git satus 
+
+
+
+=>git add f1.txt   
+(git add cammand always use to bring a file from non 
+staging area to staging area  )
+
+in staging area git only aware of the file git is 
+not tracking the file 
+
+
+
+git commit => (git track our file)
+ 
+
+ vi editor enter -> press i 
+ vi editor se out => press Esc 
+                     type:   :wq 
+
+
+
+git log => 
+
+git commit -m "meassage"
+
+
+
+git inti=> whenever i do git init the default branch that 
+will be created that is master branch 
+
+
+rm -rf .git/=> delete local repositry
+
+git init => create local git repositry 
+
+default'branch master 
+but change name => git init --initial-branch=main
+
+
+
+=> git does not track empty folders
+if we want track the folder we need to add some file inside 
+it 
+
+
+
+
+
+git status -v => for details output of git status  v=verbose =>details output
+git status -s => short information 
+
+
+
+git add . => all file ko staging area 
+
+
+now i want to undo of git perform mean i want to some file 
+come back from staging area to non staging area 
+
+git rm --cahched f1.txt f2.txt f3.txt
+
+
+
+
+
+
+if change the file which is in staging area 
+so first again we have to bring the file in the staging
+area => git add f1.txt 
+then again we to commit git commit -m "meassage" 
+
+
+
+if we change/modify which is already tracked by git 
+=>  git commit -a -m "Modified f2.txt" ;
+
+
+
+
+
+
+
+if we have already committed  of file and i want ot modification 
+int that commit  object how to do it?
+means i want to do changes in my existing 
+commit object 
+=>'git commit --amend  => commit meassage write karna padega  but last commit object 
+main hi change .
+
+=>git commit --amend --no-edit   => commit message write karne 
+ki need nahi wo mera last commit message hi pickup kar lega .
+
+
+
+
+how commit signature in a commit 
+=> git commit -s -m "task done" 
+
+=> we can see with git log  usme signature name show 
+
+
+
+
+
+
+Q.how do we create empty git commit ?
+git commit --allow-empty -m "dummy" 
+
+
+
+
+git log => shows all commit in this repositry 
+
+
+git log -n 2  => means last 2 commit show hoga 
+
+
+git log --pretty= short 
+
+git log --pretty= full 
+git log --pretty= fuller
+git log --pretty=oneline
+git log --pretty=format:"%h %s %an %ae"
+
+
+if i want to know to waht has been add/modify in the commit
+=> git log -p 
+
+
+
+Q.how to see last 1 week ka commit ?
+=>git log --since="1 week ago"
+
+=> we pass 1 month ago , yesterday etc 
+
+=>git log --since="2024-04-05" --untill="2024-05-05"
+
+=> git log --author="Ankit"    //if team main multiple man work 
+
+=>git log --gerp="Modified"  // pattern match 
+
+
+
+
+
+
+
+//how to undoig the commit 
+
+git reset --soft  b65ecdb8e92a995ecbd63daf9480454a2f9817d6
+
+jo bhi change hue the commit 3 (jo id diye hai) usko wo staging
+area main lakar chhor dega 
+
+git reset --mixed b65ecdb8e92a995ecbd63daf9480454a2f9817d6
+ 
+ if use soft then change will be brought to staging area 
+ if use mixed then change will be brought to in non stagin area  // this is dafault 
+
+
+git  diff --staged 
+
+
+
+
+
+
+
+
+//git revert 
+
+git revert da999409
+=> ye revert ho karte dete hai means last commit par 
+undo kar jate hai . but whenever i want to see the undo 
+data i can see 
+git checkout da999409  
+
+means i am  not loosing the data . 
+
+
+=> read more about git revert => i did not understand 
+
+
+
+
+
+
+// branches 
+
+git branch => it gives me information of local branches .
+
+git checkout/switch ankit => move from one branch to another branch 
+
+git branch ankit => it create the branches 
+
+
+
+run git checkout ankit 
+then touch ankit.txt // creating file 
+then git add .
+then git commit -m "this is ankit commit "
+now this commit in ankit branch not in master branch 
+
+=> at this time ankit branch one head of master branch 
+
+ 
+now run git checkout master 
+=> now file ankit.txt delete beacuse this is ankit 
+branch .if again run git checkout ankit then file again 
+come beacuse it was in ankit branch .
+
+
+
+so that branch gives me isolation . 
+isse ye hota hai dusre branch main iterupt nahi ho . 
+
+
+
+git branch -d ankit // deleted the branch 
+
+
+
+
+
+
+if koi bracnch create karke usme kuchh work kiya 
+then we want to merge perticular changes in master 
+branch .
+
+so ..
+jis branch main new code aayega uss branch main hona 
+compulsory hai 
+git checkout master 
+git merge feature1 => means jo bhi commit master main nahi hai 
+but feature1 main hai wo saare commit master main aa jayega . 
+
+
+
+
+
+
+
+
+
+
+
+//git merge 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
